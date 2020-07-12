@@ -166,6 +166,7 @@ public:
 	SHT31D_ErrorCode artEnable();
 
 	uint32_t readSerialNumber();
+	String readI2CAddress();
 
 	SHT31D readTempAndHumidity(SHT31D_Repeatability repeatability, SHT31D_Mode mode, uint8_t timeout);
 	SHT31D readTempAndHumidityClockStretch(SHT31D_Repeatability repeatability);
@@ -205,6 +206,9 @@ private:
 	SHT31D_ErrorCode read(uint16_t* data, uint8_t numOfPair);
 
 	SHT31D returnError(SHT31D_ErrorCode command);
+
+	int GetDigit(int value);
+	String GetDigitStr(int value);
 };
 
 
